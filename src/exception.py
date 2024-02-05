@@ -4,7 +4,7 @@ import sys   # manipulate parts of Python runtime environment
              # Any exceptions, sys has info about it
              
 import logging
-import logger
+# import logger
 
 # whenever error raised, this sends custom message
 def error_message_detail(error, error_detail:sys):    
@@ -30,11 +30,11 @@ class CustomException(Exception):
         return self.error_message
 
 
-if __name__=="__main__":
+# if __name__=="__main__":
     
-    try:
-        a=1/0
-    except Exception as e:
-        logging.info("Divide by zero")
-        raise CustomException(e,sys)
+#     try:
+#         a=1/0
+#     except Exception as e:
+#         logging.info("Divide by zero")
+#         raise CustomException(e,sys)
     
