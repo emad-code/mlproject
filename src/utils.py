@@ -41,7 +41,7 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, params):
             gs = GridSearchCV(model, para, cv=3)
             gs.fit(X_train, y_train)
 
-            logging.info("HP tuning complete")
+            # logging.info("HP tuning complete")
 
             model.set_params(**gs.best_params_)   # ** unpacks dict into args
             
