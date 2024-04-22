@@ -7,8 +7,7 @@ import logging
 # import logger
 
 # whenever error raised, this sends custom message
-def error_message_detail(error, error_detail:sys):    
-# ':sys' means it is present and expects from sys module
+def error_message_detail(error, error_detail:sys):    # ':sys' means it is present and expects from sys module
     _, _, exc_tb = error_detail.exc_info()  # details of exception
     file_name = exc_tb.tb_frame.f_code.co_filename
     error_message =  "Error occured in Python script name [{0}] line number [{1}] error message [{2}]".format(
@@ -19,11 +18,9 @@ def error_message_detail(error, error_detail:sys):
 
 # Create Cutomer Exception class, inheriting from Exception
 class CustomException(Exception):
-    # Override init method
-    def __init__(self, error_message, error_detail:sys):
-        super().__init__(error_message)
-        # Create error message variable
-        self.error_message = error_message_detail(error_message, error_detail=error_detail)
+    def __init__(self, error_message, error_detail:sys):   # Override init method
+        super().__init__(error_message)        
+        self.error_message = error_message_detail(error_message, error_detail=error_detail)  # Create error message variable
 
     # When printing, the error message will be printed
     def __str__(self):
