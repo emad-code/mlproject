@@ -3,8 +3,8 @@
 import sys   # manipulate parts of Python runtime environment
              # Any exceptions, sys has info about it
              
-import logging
-# import logger
+from src.logger import logging   # import custom logger
+
 
 # whenever error raised, this sends custom message
 def error_message_detail(error, error_detail:sys):    # ':sys' means it is present and expects from sys module
